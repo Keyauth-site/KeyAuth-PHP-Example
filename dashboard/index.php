@@ -1,17 +1,17 @@
 <?php
 /*
-* KEYAUTH.CC PHP EXAMPLE
+* EpicAuth.CC PHP EXAMPLE
 *
-* Edit credentials.php file and enter name & ownerid from https://keyauth.cc/app
+* Edit credentials.php file and enter name & ownerid from https://EpicAuth.cc/app
 *
-* READ HERE TO LEARN ABOUT KEYAUTH FUNCTIONS https://github.com/KeyAuth-site/KeyAuth-PHP-Example#keyauthapp-instance-definition
+* READ HERE TO LEARN ABOUT EpicAuth FUNCTIONS https://github.com/EpicAuth-site/EpicAuth-PHP-Example#EpicAuthapp-instance-definition
 *
 */
 
 /*error_reporting(E_ALL);
 ini_set('display_errors', 1); You can use this code for better error handling - recommended for local testing only*/
 
-require '../keyauth.php';
+require '../EpicAuth.php';
 require '../credentials.php';
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -24,7 +24,7 @@ if (!isset($_SESSION['user_data'])) // if user not logged in
     exit();
 }
 
-$KeyAuthApp = new KeyAuth\api($name, $ownerid);
+$EpicAuthApp = new EpicAuth\api($name, $ownerid);
 
 function findSubscription($name, $list)
 {
@@ -45,18 +45,18 @@ $creationDate = $_SESSION["user_data"]["createdate"];
 $lastLogin = $_SESSION["user_data"]["lastlogin"];
 
 if (isset($_POST['logout'])) {
-    $KeyAuthApp->logout();
+    $EpicAuthApp->logout();
     session_destroy();
     header("Location: ../");
     exit();
 }
 
 if (isset($_POST['enable2fa'])) {
-    $KeyAuthApp->enable2fa($_POST['2facode']);
+    $EpicAuthApp->enable2fa($_POST['2facode']);
 }
 
 if (isset($_POST['disable2fa'])) {
-    $KeyAuthApp->disable2fa($_POST['2facode']);
+    $EpicAuthApp->disable2fa($_POST['2facode']);
 }
 ?>
 <!DOCTYPE html>
@@ -64,9 +64,9 @@ if (isset($_POST['disable2fa'])) {
 
 <head>
     <title>Dashboard</title>
-    <script src="https://cdn.keyauth.cc/dashboard/unixtolocal.js"></script>
+    <script src="https://cdn.EpicAuth.cc/dashboard/unixtolocal.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.keyauth.cc/v3/dist/output.css">
+    <link rel="stylesheet" href="https://cdn.EpicAuth.cc/v3/dist/output.css">
 </head>
 
 <body class="min-h-screen bg-[#09090d] text-white">

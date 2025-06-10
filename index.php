@@ -4,10 +4,10 @@
 *
 * Edit credentials.php file and enter name & ownerid from https://keyauth.site/app
 *
-* READ HERE TO LEARN ABOUT KEYAUTH FUNCTIONS https://github.com/KeyAuth-site/KeyAuth-PHP-Example#keyauthapp-instance-definition
+* READ HERE TO LEARN ABOUT EpicAuth FUNCTIONS https://github.com/EpicAuth-site/EpicAuth-PHP-Example#EpicAuthapp-instance-definition
 *
 */
-include 'keyauth.php';
+include 'EpicAuth.php';
 include 'credentials.php';
 
 if (isset($_SESSION['user_data'])) {
@@ -15,10 +15,10 @@ if (isset($_SESSION['user_data'])) {
     exit();
 }
 
-$KeyAuthApp = new KeyAuth\api($name, $ownerid);
+$EpicAuthApp = new EpicAuth\api($name, $ownerid);
 
 if (!isset($_SESSION['sessionid'])) {
-    $KeyAuthApp->init();
+    $EpicAuthApp->init();
 }
 ?>
 
@@ -26,7 +26,7 @@ if (!isset($_SESSION['sessionid'])) {
 <html lang="en" class="bg-[#09090d] text-white overflow-x-hidden">
 
     <head>
-        <title>KeyAuth PHP Example</title>
+        <title>EpicAuth PHP Example</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="https://cdn.keyauth.site/assets/img/favicon.png" type="image/x-icon">
@@ -42,7 +42,7 @@ if (!isset($_SESSION['sessionid'])) {
                 <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <a href="../" class="flex items-center">
                         <img src="https://cdn.keyauth.site/v2/assets/media/logos/logo-1-dark.png" class="mr-3 h-12 mt-2"
-                            alt="KeyAuth Logo" />
+                            alt="EpicAuth Logo" />
                     </a>
                     <div class="flex items-center lg:order-2">
                         <a href="#" target="_blank"
@@ -65,7 +65,7 @@ if (!isset($_SESSION['sessionid'])) {
                         <h2
                             class="mb-7 md:mb-12 text-3xl md:text-6xl font-bold font-heading tracking-px-n leading-tight text-center">
                             Welcome to the <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-sky-400 inline-block">KeyAuth
+                                class="text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-sky-400 inline-block">EpicAuth
                                 PHP Example</span>
                             👋
                         </h2>
@@ -167,17 +167,17 @@ if (!isset($_SESSION['sessionid'])) {
             // login with username and password
 
             $code = !empty($_POST['tfa']) ? $_POST['tfa'] : null;
-            if ($KeyAuthApp->login($_POST['username'], $_POST['password'], $code)) {
+            if ($EpicAuthApp->login($_POST['username'], $_POST['password'], $code)) {
                 echo "<meta http-equiv='Refresh' Content='2; url=dashboard/'>";
-                $KeyAuthApp->success("You have successfully logged in!");
+                $EpicAuthApp->success("You have successfully logged in!");
             }
         }
 
         if (isset($_POST['register'])) {
             // register with username,password,key
-            if ($KeyAuthApp->register($_POST['username'], $_POST['password'], $_POST['key'])) {
+            if ($EpicAuthApp->register($_POST['username'], $_POST['password'], $_POST['key'])) {
                 echo "<meta http-equiv='Refresh' Content='2; url=dashboard/'>";
-                $KeyAuthApp->success("You have successfully registered!");
+                $EpicAuthApp->success("You have successfully registered!");
             }
         }
 
@@ -185,16 +185,16 @@ if (!isset($_SESSION['sessionid'])) {
             // login with just key
 
             $code = !empty($_POST['tfa']) ? $_POST['tfa'] : null;
-            if ($KeyAuthApp->license($_POST['key'], $code)) {
+            if ($EpicAuthApp->license($_POST['key'], $code)) {
                 echo "<meta http-equiv='Refresh' Content='2; url=dashboard/'>";
-                $KeyAuthApp->success("You have successfully logged in!");
+                $EpicAuthApp->success("You have successfully logged in!");
             }
         }
 
         if (isset($_POST['upgrade'])) {
-            if ($KeyAuthApp->upgrade($_POST['username'], $_POST['key'])) {
+            if ($EpicAuthApp->upgrade($_POST['username'], $_POST['key'])) {
                 // don't login, upgrade function is not for authentication, it's simply for redeeming keys
-                $KeyAuthApp->success("Upgraded Successfully! Now login please.");
+                $EpicAuthApp->success("Upgraded Successfully! Now login please.");
             }
         }
         ?>

@@ -1,4 +1,4 @@
-# KeyAuth-PHP-Example : Please star 🌟
+# EpicAuth-PHP-Example : Please star 🌟
 
 PHP example SDK for https://keyauth.site license key API auth.
 
@@ -12,11 +12,11 @@ alt="Click here to see Installation Video!" width="500" height="250" border="10"
 
 If you are using our example with no significant changes, and you are having problems, please Report Bug here https://keyauth.site/app/?page=forms
 
-However, we do **NOT** provide support for adding KeyAuth to your project. If you can't figure this out you should use Google or YouTube to learn more about the programming language you want to sell a program in.
+However, we do **NOT** provide support for adding EpicAuth to your project. If you can't figure this out you should use Google or YouTube to learn more about the programming language you want to sell a program in.
 
 ## Copyright License
 
-KeyAuth is licensed under **Elastic License 2.0**
+EpicAuth is licensed under **Elastic License 2.0**
 
 * You may not provide the software to third parties as a hosted or managed
 service, where the service provides users with access to any substantial set of
@@ -30,7 +30,7 @@ software that is protected by the license key.
 of the licensor in the software. Any use of the licensor’s trademarks is subject
 to applicable law.
 
-Thank you for your compliance, we work hard on the development of KeyAuth and do not appreciate our copyright being infringed.
+Thank you for your compliance, we work hard on the development of EpicAuth and do not appreciate our copyright being infringed.
 
 ## Anti-DDoS Security 
 
@@ -39,29 +39,29 @@ Please add a Cloudflare firewall rule to show challenge to users, then set chall
 ![image](https://user-images.githubusercontent.com/83034852/168191204-d553f134-943b-466e-a98f-255fbab204c6.png)
 
 
-## **What is KeyAuth?**
+## **What is EpicAuth?**
 
-KeyAuth is an Open source authentication system with cloud hosting plans as well. Client SDKs available for [C#](https://github.com/KeyAuth-site/KeyAuth-CSHARP-Example), [C++](https://github.com/KeyAuth-site/KeyAuth-CPP-Example), [Python](https://github.com/KeyAuth-site/KeyAuth-Python-Example), [Java](https://github.com/KeyAuth-site-Archive/KeyAuth-JAVA-api), [JavaScript](https://github.com/mazkdevf/KeyAuth-JS-Example), [VB.NET](https://github.com/KeyAuth-site/KeyAuth-VB-Example), [PHP](https://github.com/KeyAuth-site/KeyAuth-PHP-Example), [Rust](https://github.com/KeyAuth-site/KeyAuth-Rust-Example), [Go](https://github.com/mazkdevf/KeyAuth-Go-Example), [Lua](https://github.com/mazkdevf/KeyAuth-Lua-Examples), [Ruby](https://github.com/mazkdevf/KeyAuth-Ruby-Example), and [Perl](https://github.com/mazkdevf/KeyAuth-Perl-Example). KeyAuth has several unique features such as memory streaming, webhook function where you can send requests to API without leaking the API, discord webhook notifications, ban the user securely through the application at your discretion. Feel free to join https://t.me/keyauth if you have questions or suggestions.
+EpicAuth is an Open source authentication system with cloud hosting plans as well. Client SDKs available for [C#](https://github.com/EpicAuth-site/EpicAuth-CSHARP-Example), [C++](https://github.com/EpicAuth-site/EpicAuth-CPP-Example), [Python](https://github.com/EpicAuth-site/EpicAuth-Python-Example), [Java](https://github.com/EpicAuth-site-Archive/EpicAuth-JAVA-api), [JavaScript](https://github.com/mazkdevf/EpicAuth-JS-Example), [VB.NET](https://github.com/EpicAuth-site/EpicAuth-VB-Example), [PHP](https://github.com/EpicAuth-site/EpicAuth-PHP-Example), [Rust](https://github.com/EpicAuth-site/EpicAuth-Rust-Example), [Go](https://github.com/mazkdevf/EpicAuth-Go-Example), [Lua](https://github.com/mazkdevf/EpicAuth-Lua-Examples), [Ruby](https://github.com/mazkdevf/EpicAuth-Ruby-Example), and [Perl](https://github.com/mazkdevf/EpicAuth-Perl-Example). EpicAuth has several unique features such as memory streaming, webhook function where you can send requests to API without leaking the API, discord webhook notifications, ban the user securely through the application at your discretion. Feel free to join https://t.me/EpicAuth if you have questions or suggestions.
 
 > [!TIP]
 > https://vaultcord.com FREE Discord bot to Backup server, members, channels, messages & more. Custom verify page, block alt accounts, VPNs & more.
 
-## **`KeyAuthApp` instance definition**
+## **`EpicAuthApp` instance definition**
 
 Visit https://keyauth.site/app/ and select your application, then click on the **PHP** tab
 
 It'll provide you with the code which you should replace with in the `credentials.php` file.
 
 ```php
-$KeyAuthApp = new KeyAuth\api("appNameHere", "keyAuthOwnerIDHere");
+$EpicAuthApp = new EpicAuth\api("appNameHere", "EpicAuthOwnerIDHere");
 ```
 
 ## **Initialize application**
 
-You must call this function prior to using any other KeyAuth function. Otherwise the other KeyAuth function won't work.
+You must call this function prior to using any other EpicAuth function. Otherwise the other EpicAuth function won't work.
 
 ```php
-$KeyAuthApp->init();
+$EpicAuthApp->init();
 ```
 
 ## **Display application information**
@@ -76,7 +76,7 @@ $customerPanelLink = $_SESSION["customerPanelLink"];
 ## **Login with username/password**
 
 ```php
-if ($KeyAuthApp->login("userNameHere", "passWordHere")) {
+if ($EpicAuthApp->login("userNameHere", "passWordHere")) {
   // send user to dashboard or wherever you prefer
 }
 ```
@@ -84,7 +84,7 @@ if ($KeyAuthApp->login("userNameHere", "passWordHere")) {
 ## **Register with username/password/key**
 
 ```php
-if ($KeyAuthApp->register("userNameHere", "passWordHere", "licenseKeyHere")) {
+if ($EpicAuthApp->register("userNameHere", "passWordHere", "licenseKeyHere")) {
   // send user to dashboard or wherever you prefer
 }
 ```
@@ -97,7 +97,7 @@ Used so the user can add extra time to their account by claiming new key.
 > No password is needed to upgrade account. So, unlike login, register, and license functions - you should **not** log user in after successful upgrade.
 
 ```php
-if ($KeyAuthApp->upgrade("userNameHere", "licenseKeyHere")) {
+if ($EpicAuthApp->upgrade("userNameHere", "licenseKeyHere")) {
 			// don't login, upgrade function is not for authentication, it's simply for redeeming keys
       // make the user login with their username and password now.
 }
@@ -108,7 +108,7 @@ if ($KeyAuthApp->upgrade("userNameHere", "licenseKeyHere")) {
 Users can use this function if their license key has never been used before, and if it has been used before. So if you plan to just allow users to use keys, you can remove the login and register functions from your code.
 
 ```php
-if ($KeyAuthApp->license("licenseKeyHere")) {
+if ($EpicAuthApp->license("licenseKeyHere")) {
       // send user to dashboard or wherever you prefer
 }
 ```
@@ -119,12 +119,12 @@ When you first call the function, it will generate the authentication code, you 
 After you get the 6 digit code, you will need to run the function again to enable 2fa. 
 
 ```php
-$KeyAuthApp->enable2fa($_POST['2facode']);
+$EpicAuthApp->enable2fa($_POST['2facode']);
 ```
 
 ## **Disable 2fa (Two Factor Authentication)**
 ```php
-$KeyAuthApp->disable2fa($_POST['2facode']);
+$EpicAuthApp->disable2fa($_POST['2facode']);
 ```
 
 ## **User Data**
@@ -156,28 +156,28 @@ else {
 
 ## **Application variables**
 
-A string that is kept on the server-side of KeyAuth. On the dashboard you can choose for each variable to be authenticated (only logged in users can access), or not authenticated (any user can access before login). These are global and static for all users, unlike User Variables which will be dicussed below this section.
+A string that is kept on the server-side of EpicAuth. On the dashboard you can choose for each variable to be authenticated (only logged in users can access), or not authenticated (any user can access before login). These are global and static for all users, unlike User Variables which will be dicussed below this section.
 
 ```php
 //* Get Public Variable
-$var = $KeyAuthApp->var("varName");
+$var = $EpicAuthApp->var("varName");
 echo "Variable Data: " . $var;
 ```
 
 ## **User Variables**
 
-User variables are strings kept on the server-side of KeyAuth. They are specific to users. They can be set on Dashboard in the Users tab, via SellerAPI, or via your loader using the code below. `discord` is the user variable name you fetch the user variable by. `test#0001` is the variable data you get when fetching the user variable.
+User variables are strings kept on the server-side of EpicAuth. They are specific to users. They can be set on Dashboard in the Users tab, via SellerAPI, or via your loader using the code below. `discord` is the user variable name you fetch the user variable by. `test#0001` is the variable data you get when fetching the user variable.
 
 ```php
 //* Set Up User Variable
-$KeyAuthApp->setvar("varName", "varData");
+$EpicAuthApp->setvar("varName", "varData");
 ```
 
 And here's how you fetch the user variable:
 
 ```php
 //* Get User Variable
-$var = $KeyAuthApp->getvar("varName");
+$var = $EpicAuthApp->getvar("varName");
 echo "Variable Data: " . $var;
 ```
 
@@ -188,8 +188,8 @@ Can be used to log data. Good for anti-debug alerts and maybe error debugging. I
 You can use the log function before login & after login.
 
 ```php
-//* Log Something to the KeyAuth webhook that you have set up on app settings
-$KeyAuthApp->log("message");
+//* Log Something to the EpicAuth webhook that you have set up on app settings
+$EpicAuthApp->log("message");
 ```
 
 
@@ -198,19 +198,19 @@ $KeyAuthApp->log("message");
 Tutorial video https://www.youtube.com/watch?v=ENRaNPPYJbc
 
 > [!NOTE]
-> Read documentation for KeyAuth webhooks here https://keyauth.readme.io/reference/webhooks-1
+> Read documentation for EpicAuth webhooks here https://EpicAuth.readme.io/reference/webhooks-1
 
 Send HTTP requests to URLs securely without leaking the URL in your application. You should definitely use if you want to send requests to SellerAPI from your application, otherwise if you don't use you'll be leaking your seller key to everyone. And then someone can mess up your application.
 
-1st example is how to send request with no POST data. just a GET request to the URL. `7kR0UedlVI` is the webhook ID, `https://keyauth.win/api/seller/?sellerkey=sellerkeyhere&type=black` is what you should put as the webhook endpoint on the dashboard. This is the part you don't want users to see. And then you have `&ip=1.1.1.1&hwid=abc` in your program code which will be added to the webhook endpoint on the keyauth server and then the request will be sent.
+1st example is how to send request with no POST data. just a GET request to the URL. `7kR0UedlVI` is the webhook ID, `https://EpicAuth.win/api/seller/?sellerkey=sellerkeyhere&type=black` is what you should put as the webhook endpoint on the dashboard. This is the part you don't want users to see. And then you have `&ip=1.1.1.1&hwid=abc` in your program code which will be added to the webhook endpoint on the EpicAuth server and then the request will be sent.
 
 2nd example included post data, JSON. It's an example request to Discord webhook `7kR0UedlVI` is the webhook ID, `https://discord.com/api/webhooks/...` is the webhook endpoint.
 
 ```php
-$result = $KeyAuthApp->webhook("7kR0UedlVI", "&ip=1.1.1.1&hwid=abc");
+$result = $EpicAuthApp->webhook("7kR0UedlVI", "&ip=1.1.1.1&hwid=abc");
 echo "<br> Result from Webhook: " . $result;
 
-$result = $KeyAuthApp->webhook("7kR0UedlVI", "", "{\"content\": \"webhook message here\",\"embeds\": null}", "application/json"); // if Discord webhook message successful, response will be empty
+$result = $EpicAuthApp->webhook("7kR0UedlVI", "", "{\"content\": \"webhook message here\",\"embeds\": null}", "application/json"); // if Discord webhook message successful, response will be empty
 echo "<br> Result from Webhook: " . $result;
 ```
 
@@ -220,8 +220,8 @@ Ban the user and blacklist their HWID and IP Address.
 
 Function only works after login.
 
-The reason paramater will be the ban reason displayed to the user if they try to login, and visible on the KeyAuth dashboard.
+The reason paramater will be the ban reason displayed to the user if they try to login, and visible on the EpicAuth dashboard.
 
 ```php
-$KeyAuthApp->ban('Broke the rules');
+$EpicAuthApp->ban('Broke the rules');
 ```

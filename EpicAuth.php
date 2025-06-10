@@ -1,13 +1,13 @@
 <?php
 /*
-* KEYAUTH.CC PHP EXAMPLE
+* EpicAuth.CC PHP EXAMPLE
 *
-* Edit credentials.php file and enter name & ownerid from https://keyauth.cc/app
+* Edit credentials.php file and enter name & ownerid from https://EpicAuth.cc/app
 *
-* READ HERE TO LEARN ABOUT KEYAUTH FUNCTIONS https://github.com/KeyAuth-site/KeyAuth-PHP-Example#keyauthapp-instance-definition
+* READ HERE TO LEARN ABOUT EpicAuth FUNCTIONS https://github.com/EpicAuth-site/EpicAuth-PHP-Example#EpicAuthapp-instance-definition
 *
 */
-namespace KeyAuth;
+namespace EpicAuth;
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -30,7 +30,7 @@ class api
     function init()
     {
         if ($this->name == "" || strlen($this->ownerid) != 10) {
-            die("Go to <a href=\"https://keyauth.cc/app/\" target=\"blank\">https://keyauth.cc/app/</a> and click the <b>PHP</b> button in the App credentials code. Copy that & paste in <code style=\"background-color: #eee;border-radius: 3px;font-family: courier, monospace;padding: 0 3px;\">credentials.php</code>");
+            die("Go to <a href=\"https://EpicAuth.cc/app/\" target=\"blank\">https://EpicAuth.cc/app/</a> and click the <b>PHP</b> button in the App credentials code. Copy that & paste in <code style=\"background-color: #eee;border-radius: 3px;font-family: courier, monospace;padding: 0 3px;\">credentials.php</code>");
         }
 
         $data = array(
@@ -41,14 +41,14 @@ class api
 
         $response = $this->req($data);
 
-        if ($response == "KeyAuth_Invalid") {
-            die("Go to <a href=\"https://keyauth.cc/app/\" target=\"blank\">https://keyauth.cc/app/</a> and click the <b>PHP</b> button in the App credentials code. Copy that & paste in <code style=\"background-color: #eee;border-radius: 3px;font-family: courier, monospace;padding: 0 3px;\">credentials.php</code>");
+        if ($response == "EpicAuth_Invalid") {
+            die("Go to <a href=\"https://EpicAuth.cc/app/\" target=\"blank\">https://EpicAuth.cc/app/</a> and click the <b>PHP</b> button in the App credentials code. Copy that & paste in <code style=\"background-color: #eee;border-radius: 3px;font-family: courier, monospace;padding: 0 3px;\">credentials.php</code>");
         }
 
         $json = json_decode($response);
 
         if ($json->message == "This program hash does not match, make sure you're using latest version") {
-            die("You must disable hash check at <a href=\"https://keyauth.cc/app/?page=app-settings\" target=\"blank\">https://keyauth.cc/app/?page=app-settings</a>");
+            die("You must disable hash check at <a href=\"https://EpicAuth.cc/app/?page=app-settings\" target=\"blank\">https://EpicAuth.cc/app/?page=app-settings</a>");
         }
 
         if (!$json->success)
@@ -439,7 +439,7 @@ class api
     private function req($data)
     {
         $curl = curl_init("https://keyauth.site/api/1.2/");
-        curl_setopt($curl, CURLOPT_USERAGENT, "KeyAuth");
+        curl_setopt($curl, CURLOPT_USERAGENT, "EpicAuth");
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         curl_setopt($curl, CURLOPT_POST, 1);
