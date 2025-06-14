@@ -1,6 +1,6 @@
 # EpicAuth-PHP-Example : Please star 🌟
 
-PHP example SDK for https://keyauth.site license key API auth.
+PHP example SDK for https://EpicAuth.cc license key API auth.
 
 ## **Video Tutorial:**
 
@@ -10,7 +10,7 @@ alt="Click here to see Installation Video!" width="500" height="250" border="10"
 
 ## **Bugs**
 
-If you are using our example with no significant changes, and you are having problems, please Report Bug here https://keyauth.site/app/?page=forms
+If you are using our example with no significant changes, and you are having problems, please Report Bug here https://EpicAuth.cc/app/?page=forms
 
 However, we do **NOT** provide support for adding EpicAuth to your project. If you can't figure this out you should use Google or YouTube to learn more about the programming language you want to sell a program in.
 
@@ -48,7 +48,7 @@ EpicAuth is an Open source authentication system with cloud hosting plans as wel
 
 ## **`EpicAuthApp` instance definition**
 
-Visit https://keyauth.site/app/ and select your application, then click on the **PHP** tab
+Visit https://EpicAuth.cc/app/ and select your application, then click on the **PHP** tab
 
 It'll provide you with the code which you should replace with in the `credentials.php` file.
 

@@ -1,8 +1,8 @@
 <?php
 /*
-* keyauth.site PHP EXAMPLE
+* EpicAuth.cc PHP EXAMPLE
 *
-* Edit credentials.php file and enter name & ownerid from https://keyauth.site/app
+* Edit credentials.php file and enter name & ownerid from https://EpicAuth.cc/app
 *
 * READ HERE TO LEARN ABOUT EpicAuth FUNCTIONS https://github.com/EpicAuth-site/EpicAuth-PHP-Example#EpicAuthapp-instance-definition
 *
@@ -29,11 +29,11 @@ if (!isset($_SESSION['sessionid'])) {
         <title>EpicAuth PHP Example</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="https://cdn.keyauth.site/assets/img/favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="https://cdn.EpicAuth.cc/assets/img/favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 
-        <link rel="stylesheet" href="https://cdn.keyauth.site/v3/dist/output.css">
+        <link rel="stylesheet" href="https://cdn.EpicAuth.cc/v3/dist/output.css">
     </head>
 
     <body>
@@ -41,7 +41,7 @@ if (!isset($_SESSION['sessionid'])) {
             <nav class="border-gray-200 px-4 lg:px-6 py-2.5 mb-14">
                 <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <a href="../" class="flex items-center">
-                        <img src="https://cdn.keyauth.site/v2/assets/media/logos/logo-1-dark.png" class="mr-3 h-12 mt-2"
+                        <img src="https://cdn.EpicAuth.cc/v2/assets/media/logos/logo-1-dark.png" class="mr-3 h-12 mt-2"
                             alt="EpicAuth Logo" />
                     </a>
                     <div class="flex items-center lg:order-2">

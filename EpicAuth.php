@@ -438,7 +438,7 @@ class api
 
     private function req($data)
     {
-        $curl = curl_init("https://keyauth.site/api/1.2/");
+        $curl = curl_init("https://EpicAuth.cc/api/1.2/");
         curl_setopt($curl, CURLOPT_USERAGENT, "EpicAuth");
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
